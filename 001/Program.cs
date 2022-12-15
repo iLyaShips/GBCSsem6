@@ -33,9 +33,14 @@ int PosCount (int[]arr)
     }
     return count;
 }
-
-Console.WriteLine("Введите число");
-int m = Convert.ToInt32(Console.ReadLine());
-int[] array = FillArray(m);
-PrintArray(array);
-Console.WriteLine($"В массиве " + PosCount (array) + " положительных чисел.");
+try
+{    Console.WriteLine("Введите число");
+    int m = Convert.ToInt32(Console.ReadLine());
+    int[] array = FillArray(m);
+    PrintArray(array);
+    Console.WriteLine($"В массиве " + PosCount (array) + " положительных чисел.");
+}
+catch
+{
+    Console.WriteLine("Ошибка! Проверьте вводимые данные.");
+}

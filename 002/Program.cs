@@ -20,16 +20,25 @@ double[] IntersectionPoint(double b1, double k1, double b2, double k2)
     point[1] = k1 * (b2 - b1) / (k1 - k2) + b1; // y
     return point;
 }
-
-Console.WriteLine("Введите число b1");
-double b1 = Convert.ToDouble(Console.ReadLine());
-Console.WriteLine("Введите число k1");
-double k1 = Convert.ToDouble(Console.ReadLine());
-Console.WriteLine("Введите число b2");
-double b2 = Convert.ToDouble(Console.ReadLine());
-Console.WriteLine("Введите число k2");
-double k2 = Convert.ToDouble(Console.ReadLine());
-
-double[] array = IntersectionPoint(b1,k1,b2,k2);
-Console.WriteLine("Точка пересечения прямых: ");
-PrintArray(array);
+try
+{
+    Console.WriteLine("Введите число b1");
+    double b1 = Convert.ToDouble(Console.ReadLine());
+    Console.WriteLine("Введите число k1");
+    double k1 = Convert.ToDouble(Console.ReadLine());
+    Console.WriteLine("Введите число b2");
+    double b2 = Convert.ToDouble(Console.ReadLine());
+    Console.WriteLine("Введите число k2");
+    double k2 = Convert.ToDouble(Console.ReadLine());
+    if (k1 != k2)
+    {
+        double[] array = IntersectionPoint(b1, k1, b2, k2);
+        Console.WriteLine("Точка пересечения прямых: ");
+        PrintArray(array);
+    }
+    else Console.WriteLine("Индексы k1 = k2. Прямые не пересекаются. ");
+}
+catch
+{
+    Console.WriteLine("Ошибка! Проверьте вводимые данные.");
+}

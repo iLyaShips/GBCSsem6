@@ -58,13 +58,18 @@ void MinMax(int[,] arr)
     Console.Write($"Минимальное число: {min} с индексами ");
     PrintArray1(min_index);
 }
-
-Console.WriteLine("Введите количество строк двумерного массива");
-int rows = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите количество столбцов двумерного массива");
-int cols = Convert.ToInt32(Console.ReadLine());
-int[,] array = new int [rows,cols];
-FillArray(array);
-Console.WriteLine("");
-PrintArray2(array);
-MinMax(array);
+try
+    {Console.WriteLine("Введите количество строк двумерного массива");
+    int rows = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Введите количество столбцов двумерного массива");
+    int cols = Convert.ToInt32(Console.ReadLine());
+    int[,] array = new int [rows,cols];
+    FillArray(array);
+    Console.WriteLine("");
+    PrintArray2(array);
+    MinMax(array);
+}
+catch
+{
+    Console.WriteLine("Ошибка! Проверьте вводимые данные.");
+}
